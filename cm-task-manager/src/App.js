@@ -2,13 +2,21 @@ import { useState } from 'react';
 
 function App() {
   const [activeBoard, setActiveBoard] = useState('tasks');
+  const [tasks, setTasks] = useState(['task', 'task']);
+  const [projects, setProjects] = useState(['project', 'project']);
 
   return (
     <main className='App'>
       <Header />
       <div className='row'>
         <Sidebar activeBoard={activeBoard} setActiveBoard={setActiveBoard} />
-        <TaskTable activeBoard={activeBoard} />
+        <TaskTable
+          activeBoard={activeBoard}
+          tasks={tasks}
+          projects={projects}
+          setTasks={setTasks}
+          setProjects={setProjects}
+        />
       </div>
     </main>
   );
@@ -57,8 +65,41 @@ function Sidebar({ activeBoard, setActiveBoard }) {
   );
 }
 
-function TaskTable({ activeBoard }) {
-  return <p>{activeBoard === 'tasks' ? 'Tasks' : 'Projects'} </p>;
+function TaskTable({ activeBoard, tasks, projects, setTasks, setProjects }) {
+  const newTask = 'task';
+  const newProject = 'project';
+
+  function handleAddItem() {
+    activeBoard === 'tasks'
+      ? setTasks([...tasks, newTask])
+      : setProjects([...projects, newProject]);
+  }
+
+  return (
+    <section className='task-list'>
+      <h2>{activeBoard === 'tasks' ? 'Tasks' : 'Projects'} </h2>
+      <button onClick={handleAddItem}>
+        Add {activeBoard === 'tasks' ? 'Task' : 'Project'}
+      </button>
+      <table>
+        {activeBoard === 'tasks'
+          ? tasks.map((task) => {
+              return (
+                <tr>
+                  <td>{task}</td>
+                </tr>
+              );
+            })
+          : projects.map((project) => {
+              return (
+                <tr>
+                  <td>{project}</td>
+                </tr>
+              );
+            })}
+      </table>
+    </section>
+  );
 }
 
 export default App;

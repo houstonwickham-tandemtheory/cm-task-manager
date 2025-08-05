@@ -141,7 +141,7 @@ nav {
   border-right: 3px solid red;
   text-align: center;
   position: relative;
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
 nav.closed {
@@ -194,10 +194,20 @@ nav button.close-sidebar {
   right: -22px;
 }
 
-p {
+section.task-list {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   border: 1px solid red;
   text-align: center;
   padding: 10px;
-  margin-right: 20px;
+  margin: 20px;
+  position: relative;
+}
+
+section.task-list h2 {
+  margin: 10px;
+}
+section.task-list button {
+  position: absolute;
 }

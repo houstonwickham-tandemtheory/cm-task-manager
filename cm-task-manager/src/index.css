@@ -198,7 +198,6 @@ section.task-list {
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid red;
   text-align: center;
   padding: 10px;
   margin: 20px;
@@ -210,4 +209,22 @@ section.task-list h2 {
 }
 section.task-list button {
   position: absolute;
+  border: 2px solid white;
+  background: rgb(52, 52, 52);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+section.task-list table {
+  margin-top: 10px;
+  border: 1px solid red;
+}
+section.task-list table tr:nth-child(odd) {
+  background-color: #676767;
+}
+section.task-list table tr:first-child {
+  background-color: #ffffff;
+  color: black;
+  font-size: 20px;
 }

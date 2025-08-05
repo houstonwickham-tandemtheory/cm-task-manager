@@ -82,10 +82,23 @@ function TaskTable({ activeBoard, tasks, projects, setTasks, setProjects }) {
         Add {activeBoard === 'tasks' ? 'Task' : 'Project'}
       </button>
       <table>
+        <tr>
+          <th>Campaign Name</th>
+          <th>BU</th>
+          <th>Owner</th>
+          <th>Status</th>
+          <th>Launch Date</th>
+          <th>Notes</th>
+        </tr>
         {activeBoard === 'tasks'
           ? tasks.map((task) => {
               return (
                 <tr>
+                  <td>{task}</td>
+                  <td>{task}</td>
+                  <td>{task}</td>
+                  <td>{task}</td>
+                  <td>{task}</td>
                   <td>{task}</td>
                 </tr>
               );
@@ -93,6 +106,11 @@ function TaskTable({ activeBoard, tasks, projects, setTasks, setProjects }) {
           : projects.map((project) => {
               return (
                 <tr>
+                  <td>{project}</td>
+                  <td>{project}</td>
+                  <td>{project}</td>
+                  <td>{project}</td>
+                  <td>{project}</td>
                   <td>{project}</td>
                 </tr>
               );

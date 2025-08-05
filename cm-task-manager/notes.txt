@@ -1,0 +1,6 @@
+Still need
+Add item form
+controlled inputs for all fields
+sort functionality
+storage for lists(local storage? backend?)
+table styling

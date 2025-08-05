@@ -138,10 +138,12 @@ header h1 {
 
 nav {
   width: 15%;
+  min-width: 145px;
   border-right: 3px solid red;
   text-align: center;
   position: relative;
   margin-right: 10px;
+  transition: width 0.5s ease-in-out;
 }
 
 nav.closed {
@@ -150,17 +152,23 @@ nav.closed {
 
 nav.closed h2,
 nav.closed ul {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s ease-in-out;
 }
 
 nav h2 {
+  opacity: 100%;
   margin-bottom: 10px;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
 }
 
 nav ul {
+  opacity: 100%;
   margin: 0;
   padding: 0;
   list-style-type: none;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
 }
 
 nav ul li button {
@@ -170,6 +178,12 @@ nav ul li button {
   color: #fff;
   padding: 10px;
   margin: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+nav ul li button.active {
+  border: 3px solid red;
+  color: white;
 }
 
 nav ul li button:hover {
@@ -178,8 +192,10 @@ nav ul li button:hover {
   cursor: pointer;
 }
 
-nav ul li button.active {
-  border: 3px solid red;
+nav ul li button:active {
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
 }
 
 nav button.close-sidebar {
@@ -192,6 +208,13 @@ nav button.close-sidebar {
   margin: 5px;
   top: 10px;
   right: -22px;
+  transition: all 0.2s ease-in-out;
+}
+
+nav button.close-sidebar:hover {
+  background: white;
+  border: 3px solid red;
+  color: red;
 }
 
 section.task-list {
@@ -207,24 +230,62 @@ section.task-list {
 section.task-list h2 {
   margin: 10px;
 }
-section.task-list button {
+section.task-list button.add {
   position: absolute;
   border: 2px solid white;
   background: rgb(52, 52, 52);
   color: white;
   padding: 10px;
   border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+section.task-list button.add:hover {
+  color: red;
+  border: 3px solid red;
+  cursor: pointer;
+}
+
+section.task-list button.add:active {
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
 }
 
 section.task-list table {
   margin-top: 10px;
+}
+section.task-list table thead th,
+section.task-list table tbody td {
   border: 1px solid red;
 }
-section.task-list table tr:nth-child(odd) {
+section.task-list table tbody tr:nth-child(even) {
   background-color: #676767;
 }
-section.task-list table tr:first-child {
+section.task-list table thead tr {
   background-color: #ffffff;
   color: black;
   font-size: 20px;
+}
+
+section.task-list table button {
+  border: none;
+  background: transparent;
+  vertical-align: middle;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    padding: 20px;
+    flex-direction: column;
+  }
+  header img {
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 140px;
+    padding-bottom: 10px;
+  }
 }

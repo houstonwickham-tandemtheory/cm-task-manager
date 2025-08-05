@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cm-task-manager/static/css/main.31562faa.css",
+    "main.js": "/cm-task-manager/static/js/main.587494ef.js",
+    "index.html": "/cm-task-manager/index.html",
+    "main.31562faa.css.map": "/cm-task-manager/static/css/main.31562faa.css.map",
+    "main.587494ef.js.map": "/cm-task-manager/static/js/main.587494ef.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31562faa.css",
+    "static/js/main.587494ef.js"
+  ]
+}

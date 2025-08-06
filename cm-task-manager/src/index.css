@@ -143,11 +143,12 @@ nav {
   text-align: center;
   position: relative;
   margin-right: 10px;
-  transition: width 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 nav.closed {
   width: 3%;
+  min-width: 50px;
 }
 
 nav.closed h2,
@@ -160,7 +161,7 @@ nav.closed ul {
 nav h2 {
   opacity: 100%;
   margin-bottom: 10px;
-  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+  transition: visibility 0.7s, opacity 0.7s ease-in-out;
 }
 
 nav ul {
@@ -168,7 +169,7 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+  transition: visibility 0.7s, opacity 0.7s ease-in-out;
 }
 
 nav ul li button {
@@ -177,7 +178,7 @@ nav ul li button {
   border-radius: 8%;
   color: #fff;
   padding: 10px;
-  margin: 5px;
+  margin: 10px;
   transition: all 0.2s ease-in-out;
 }
 
